@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { links, stats, stack, featured, github } from "./data.js";
+import { links, stats, stack, github } from "./data.js";
 
 const ease = [0.2, 0.8, 0.2, 1];
 
@@ -18,8 +18,7 @@ function Nav() {
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5 sm:px-6">
         <a href="#top" className="font-display text-lg font-bold">MH<span className="gradient-text">.</span></a>
         <div className="flex items-center gap-5 text-sm text-muted">
-          <a href="#projets" className="hidden transition-colors hover:text-ink sm:block">Projets</a>
-          <a href="#github" className="hidden transition-colors hover:text-ink sm:block">GitHub</a>
+          <a href="#github" className="hidden transition-colors hover:text-ink sm:block">Projets</a>
           <a href="#contact" className="rounded-full bg-gradient-to-r from-violet to-fuchsia px-4 py-2 font-medium text-white transition-transform hover:-translate-y-0.5">Contact</a>
         </div>
       </nav>
@@ -45,7 +44,7 @@ function Hero() {
             </p>
           </div>
           <div className="mt-7 flex flex-wrap gap-3">
-            <a href="#projets" className="rounded-full bg-gradient-to-r from-violet to-fuchsia px-5 py-3 text-sm font-medium text-white transition-transform hover:-translate-y-0.5">Voir mes projets</a>
+            <a href="#github" className="rounded-full bg-gradient-to-r from-violet to-fuchsia px-5 py-3 text-sm font-medium text-white transition-transform hover:-translate-y-0.5">Voir mes projets</a>
             <a href={links.gh} target="_blank" rel="noopener noreferrer" className="rounded-full border border-line px-5 py-3 text-sm font-medium transition-colors hover:border-violet/50">GitHub</a>
           </div>
         </motion.div>
@@ -83,35 +82,6 @@ function Hero() {
           className="glass flex flex-wrap items-center gap-2 p-5 sm:col-span-2">
           {stack.map((s) => <span key={s} className="chip">{s}</span>)}
         </motion.div>
-      </div>
-    </section>
-  );
-}
-
-function Featured() {
-  return (
-    <section id="projets" className="mx-auto max-w-5xl scroll-mt-20 px-5 py-16 sm:px-6 sm:py-20">
-      <Reveal>
-        <span className="font-mono text-xs uppercase tracking-[0.18em] text-violet">Projets phares</span>
-        <h2 className="font-display mt-2 text-3xl font-bold sm:text-4xl">Des livraisons réelles</h2>
-        <p className="mt-3 max-w-2xl text-muted">Projets clients (anonymisés, données de démonstration). Le code est privé.</p>
-      </Reveal>
-      <div className="mt-10 grid gap-5 lg:grid-cols-2">
-        {featured.map((c, i) => (
-          <motion.article key={c.title} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, delay: i * 0.06, ease }} className="glass glass-hover overflow-hidden">
-            <div className="overflow-hidden border-b border-line">
-              <img src={c.img} alt={c.title} loading="lazy" className="aspect-[16/10] w-full object-cover object-top" />
-            </div>
-            <div className="p-6">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-fuchsia">{c.sector}</span>
-              <h3 className="font-display mt-1.5 text-xl font-bold">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{c.desc}</p>
-              <div className="mt-4 flex flex-wrap gap-2">{c.stack.map((s) => <span key={s} className="chip">{s}</span>)}</div>
-              <p className="mt-4 font-mono text-xs text-faint">{c.metric}</p>
-            </div>
-          </motion.article>
-        ))}
       </div>
     </section>
   );
@@ -183,7 +153,6 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Featured />
         <GitHub />
         <Contact />
       </main>

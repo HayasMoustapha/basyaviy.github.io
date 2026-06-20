@@ -12,20 +12,6 @@ export const stats = [
 export const stack = ["React", "Next.js", "Node.js", "Python", "TypeScript", "Tailwind", "PostgreSQL", "RabbitMQ", "Docker", "React Native", "Odoo"];
 
 // Projets phares (repos privés clients) — anonymisés, vraies captures, données de démo
-export const featured = [
-  { sector: "Secteur public", title: "Plateforme d'état civil", img: "/cases/civilcert.png",
-    desc: "Déclarations & certificats à l'échelle d'une administration. Architecture microservices, RabbitMQ en cluster, Docker.",
-    stack: ["Next.js", "Python", "RabbitMQ", "Docker"], metric: "338 commits · 8+ services" },
-  { sector: "Éducation · SaaS", title: "SaaS multi-tenant", img: "/cases/umatic.png",
-    desc: "Réseau de centres, données isolées, web + mobile. Auth, notifications, design-system, i18n / RTL.",
-    stack: ["Multi-tenant", "Mobile", "Microservices", "Docker"], metric: "127 commits · web + mobile" },
-  { sector: "Événementiel", title: "Gestion d'événements", img: "/cases/eventflow.png",
-    desc: "App full-stack : API, frontend, Google OAuth, intégration Figma → code soignée.",
-    stack: ["Full-stack", "Google OAuth", "API"], metric: "full-stack livré" },
-  { sector: "Design · ERP", title: "Thème Odoo sur-mesure", img: "/cases/odoo-bao.png",
-    desc: "Interface ERP modernisée et cohérente (achats, stock, produits), packagée et réutilisable.",
-    stack: ["Odoo", "CSS", "Design system"], metric: "module réutilisable" },
-];
 
 // GitHub présenté par catégorie (repos publics)
 export const github = [
